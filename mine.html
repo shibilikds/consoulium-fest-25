@@ -78,11 +78,13 @@
         <!-- Header -->
         <header class="sticky top-0 z-50 w-full bg-brand-dark/90 backdrop-blur-md border-b border-brand-teal/20">
           <div class="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2 group">
-              <span class="font-sans text-2xl font-bold tracking-tighter text-brand-light">Consoulium</span>
-              <div class="bg-brand-yellow text-brand-charcoal px-2 py-0.5 rounded-md transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
-                 <span class="font-pixel text-2xl">25</span>
+            <a href="#" class="flex items-center gap-3 group">
+              <!-- LOGO SLOT ADDED HERE WITH EFFECT -->
+              <div class="w-10 h-10 relative flex items-center justify-center bg-brand-light/10 rounded-lg overflow-hidden border border-brand-teal/30 group-hover:border-brand-yellow/50 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-[0_0_15px_rgba(233,196,106,0.4)]">
+                  <img src="https://placehold.co/100x100/png?text=Logo" alt="Consoulium Logo" class="w-full h-full object-cover">
               </div>
+              
+              <span class="font-sans text-2xl font-bold tracking-tighter text-brand-light group-hover:text-brand-yellow transition-colors duration-300">Consoulium</span>
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-brand-light/80">
               <a href="#" class="text-brand-light font-bold hover:text-brand-yellow transition-colors">Home</a>
@@ -136,6 +138,14 @@
                 <!-- Gradient Overlay as requested -->
                 <div class="absolute inset-0 bg-brand-gradient opacity-40 mix-blend-overlay z-[2]"></div>
 
+                <!-- LOGO SLOT ADDED HERE (Top Right) -->
+                <div class="absolute top-6 right-6 md:top-12 md:right-12 z-20">
+                    <!-- Removed the image, added a placeholder box for the logo -->
+                    <div class="w-24 h-24 md:w-32 md:h-32 bg-brand-charcoal/60 backdrop-blur-md border border-brand-light/20 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+                        <span class="text-brand-light/70 font-bold text-xs md:text-sm">LOGO SPACE</span>
+                    </div>
+                </div>
+
                 <div class="absolute inset-0 z-10 p-6 md:p-16 flex flex-col justify-end">
                   <div class="flex flex-col md:flex-row items-end justify-between gap-12 w-full">
                     <div class="max-w-4xl w-full">
@@ -180,25 +190,20 @@
                       <p class="text-lg text-brand-light/80 leading-relaxed">Our workspace is designed to spark your imagination and keep ideas flowing.</p>
                    </div>
                 </div>
+                <!-- REPLACED PNG SLOT WITH ATOMIC ANIMATION -->
                 <div class="md:w-1/2 flex justify-center relative">
-                    <div id="feature-wire" class="w-64 h-64 md:w-[32rem] md:h-[32rem] relative flex items-center justify-center transition-transform duration-75 ease-out will-change-transform">
-                         <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-yellow/10 border-2 border-brand-yellow backdrop-blur-sm absolute" style="clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"></div>
-                         <div class="w-48 h-48 md:w-60 md:h-60 bg-brand-teal/20 border-2 border-brand-teal backdrop-blur-md absolute animate-[spin_12s_linear_infinite]" style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)"></div>
-                         <div class="w-24 h-24 md:w-32 md:h-32 bg-brand-orange absolute shadow-xl" style="clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"></div>
-                         <div class="absolute top-0 right-0 md:-right-4 bg-brand-pink text-brand-charcoal p-3 rounded-xl shadow-lg animate-bounce z-20"><i data-lucide="sparkles" class="w-6 h-6"></i></div>
+                    <!-- Increased max-width for large screens -->
+                    <div id="atomic-container" class="relative w-full max-w-[500px] lg:max-w-[700px] aspect-square flex items-center justify-center">
+                        <canvas id="atomicCanvas" class="w-full h-full"></canvas>
                     </div>
                 </div>
              </div>
              <!-- Block 2 -->
              <div class="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-24 relative">
                 <div class="md:w-1/2 flex justify-center relative">
-                    <div id="feature-shape" class="w-64 h-64 md:w-[30rem] md:h-[30rem] relative flex items-center justify-center transition-transform duration-75 ease-out will-change-transform">
-                        <div class="w-64 h-64 md:w-96 md:h-96 rounded-full border border-brand-teal/30 absolute animate-pulse"></div>
-                        <div class="w-48 h-48 md:w-72 md:h-72 rounded-full border border-brand-yellow/30 absolute"></div>
-                        <div class="w-32 h-32 md:w-48 md:h-48 bg-brand-yellow/20 border-2 border-brand-yellow absolute transform rotate-12 backdrop-blur-sm"></div>
-                        <div class="w-32 h-32 md:w-48 md:h-48 bg-brand-teal/20 border-2 border-brand-teal absolute transform -rotate-12 backdrop-blur-sm"></div>
-                        <div class="w-16 h-16 md:w-24 md:h-24 bg-brand-pink transform rotate-45 shadow-2xl absolute z-10"></div>
-                        <div class="absolute -top-4 right-1/4 bg-brand-orange text-brand-charcoal p-3 rounded-xl shadow-lg rotate-12 z-20"><i data-lucide="square" class="w-6 h-6 fill-current"></i></div>
+                    <!-- REPLACED PNG SLOT 2 WITH DNA ANIMATION -->
+                    <div id="dna-container" class="relative w-full max-w-[500px] lg:max-w-[700px] aspect-square flex items-center justify-center">
+                        <canvas id="dnaCanvas" class="w-full h-full"></canvas>
                     </div>
                 </div>
                 <div class="md:w-1/2 relative z-10">
@@ -530,6 +535,12 @@
 
             // Initialize Main Site Features immediately
             initMainSite();
+            
+            // Initialize Atomic Animation
+            initAtomicAnimation();
+
+            // Initialize DNA Animation
+            initDnaAnimation();
         });
 
         // Initialize Main Site
@@ -547,6 +558,277 @@
 
             // Render Events
             renderEvents();
+        }
+
+        // --- ATOMIC ANIMATION LOGIC ---
+        function initAtomicAnimation() {
+            const canvas = document.getElementById('atomicCanvas');
+            if (!canvas) return; // Exit if canvas not found
+            const ctx = canvas.getContext('2d');
+            const container = canvas.parentElement;
+
+            let width, height;
+            
+            // Colors from the theme
+            const colors = {
+                teal: '#2A9D8F',
+                orange: '#F4A261',
+                yellow: '#E9C46A',
+                centerDark: '#264653',
+                centerLight: '#F4A261'
+            };
+
+            // Dynamic variables for responsiveness
+            let particleSize = 6;
+            let ringRadiusX = 140; 
+            let ringRadiusY = 50;  
+            let gearRadius = 30;
+            
+            function resize() {
+                width = container.clientWidth;
+                height = container.clientHeight;
+                canvas.width = width;
+                canvas.height = height;
+
+                // Scale dimensions based on container width
+                const scaleFactor = width / 500;
+                
+                ringRadiusX = 140 * scaleFactor;
+                ringRadiusY = 50 * scaleFactor;
+                particleSize = 6 * scaleFactor;
+                gearRadius = 30 * scaleFactor;
+            }
+
+            window.addEventListener('resize', resize);
+            resize(); // Initial call
+
+            // Helper to draw a filled circle
+            function drawCircle(x, y, radius, color) {
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, Math.PI * 2);
+                ctx.fillStyle = color;
+                ctx.fill();
+                ctx.closePath();
+            }
+
+            // Helper to draw the central gear-like structure
+            function drawCenter(angle) {
+                ctx.save();
+                ctx.translate(width / 2, height / 2);
+                ctx.rotate(-angle); 
+
+                // Dark outer gear
+                ctx.beginPath();
+                const teeth = 8;
+                for (let i = 0; i < teeth * 2; i++) {
+                    const r = (i % 2 === 0) ? gearRadius : gearRadius - (8 * (width/500)); // Scale notch depth too
+                    const a = (Math.PI * 2 * i) / (teeth * 2);
+                    ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r);
+                }
+                ctx.fillStyle = colors.centerDark;
+                ctx.fill();
+                ctx.closePath();
+
+                // Inner light circle
+                drawCircle(0, 0, 12 * (width/500), colors.yellow);
+                
+                ctx.restore();
+            }
+
+            // Class to manage each ring of dots
+            class Ring {
+                constructor(rotationAngle, color, speed) {
+                    this.rotationAngle = rotationAngle;
+                    this.color = color;
+                    this.speed = speed;
+                    this.numDots = 40;
+                    this.animationOffset = 0;
+                }
+
+                update() {
+                    this.animationOffset += this.speed;
+                }
+
+                draw() {
+                    ctx.save();
+                    ctx.translate(width / 2, height / 2);
+                    ctx.rotate(this.rotationAngle);
+
+                    for (let i = 0; i < this.numDots; i++) {
+                        const angle = (Math.PI * 2 * i) / this.numDots + this.animationOffset;
+                        const x = Math.cos(angle) * ringRadiusX;
+                        const y = Math.sin(angle) * ringRadiusY;
+
+                        // Size variation for 3D effect
+                        const scale = (Math.sin(angle) + 2) / 3; 
+                        
+                        ctx.beginPath();
+                        ctx.arc(x, y, particleSize * scale, 0, Math.PI * 2);
+                        ctx.fillStyle = this.color;
+                        ctx.fill();
+                    }
+                    ctx.restore();
+                }
+            }
+
+            const rings = [
+                new Ring(0, colors.yellow, 0.01),              
+                new Ring(Math.PI / 3, colors.orange, 0.01),    
+                new Ring((Math.PI * 2) / 3, colors.teal, 0.01) 
+            ];
+
+            let globalRotation = 0;
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                globalRotation += 0.005;
+                drawCenter(globalRotation);
+
+                ctx.save();
+                ctx.translate(width/2, height/2);
+                ctx.rotate(globalRotation); 
+                ctx.translate(-width/2, -height/2);
+
+                rings.forEach(ring => {
+                    ring.update();
+                    ring.draw();
+                });
+                
+                ctx.restore();
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // --- DNA ANIMATION LOGIC ---
+        function initDnaAnimation() {
+            const canvas = document.getElementById('dnaCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const container = canvas.parentElement;
+
+            let width, height;
+            let particles = [];
+            let time = 0;
+
+            // Colors adapted for the Dark Theme
+            const colors = {
+                // bg: transparent, 
+                backbone: '#2A9D8F', // Teal for backbone
+                rungs: [
+                    '#E9C46A', // Yellow
+                    '#F4A261', // Orange
+                    '#F7B9B1', // Pink
+                    '#F8FAF3'  // Light/White
+                ]
+            };
+
+            function resize() {
+                width = container.clientWidth;
+                height = container.clientHeight;
+                canvas.width = width;
+                canvas.height = height;
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+
+            // 3D Projection Logic
+            function project(x, y, z) {
+                // Adjust scale based on canvas size to keep DNA centered and sized correctly
+                const baseScale = width / 4; // Dynamic scaling factor
+                const perspective = width; // Dynamic perspective depth
+                
+                const scale = perspective / (perspective + z); 
+                const x2d = x * scale + width / 2;
+                const y2d = y * scale + height / 2;
+                return {
+                    x: x2d,
+                    y: y2d,
+                    scale: scale
+                };
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height); // Clear for transparent background
+
+                particles = [];
+
+                // DNA Configuration adapted for container size
+                const strandCount = 25; 
+                const spacing = height / 18; // Spacing relative to height
+                const radius = width / 5;    // Radius relative to width
+                const speed = 0.02; 
+                
+                const startY = -(strandCount * spacing) / 2;
+
+                time += speed;
+
+                for (let i = 0; i < strandCount; i++) {
+                    const y = startY + i * spacing;
+                    const angle = (i * 0.5) + time;
+
+                    // Strand A & B positions
+                    const x1 = Math.cos(angle) * radius;
+                    const z1 = Math.sin(angle) * radius;
+                    
+                    const x2 = Math.cos(angle + Math.PI) * radius;
+                    const z2 = Math.sin(angle + Math.PI) * radius;
+
+                    const rungColor = colors.rungs[i % colors.rungs.length];
+
+                    // 1. Rungs (Connecting dots)
+                    const dotsInRung = 12;
+                    for (let j = 0; j <= dotsInRung; j++) {
+                        const t = j / dotsInRung;
+                        const px = x1 + (x2 - x1) * t;
+                        const pz = z1 + (z2 - z1) * t;
+                        const py = y;
+
+                        particles.push({
+                            x: px, y: py, z: pz,
+                            radius: 3 * (width/500), // Responsive dot size
+                            color: rungColor,
+                            type: 'rung'
+                        });
+                    }
+
+                    // 2. Backbone (Large dots)
+                    particles.push({
+                        x: x1, y: y, z: z1,
+                        radius: 10 * (width/500), 
+                        color: colors.backbone,
+                        type: 'backbone'
+                    });
+
+                    particles.push({
+                        x: x2, y: y, z: z2,
+                        radius: 10 * (width/500),
+                        color: colors.backbone,
+                        type: 'backbone'
+                    });
+                }
+
+                // Sort by depth (Z-index)
+                particles.sort((a, b) => b.z - a.z);
+
+                // Draw
+                particles.forEach(p => {
+                    const pos = project(p.x, p.y, p.z);
+                    const alpha = p.type === 'rung' ? 0.7 : 1; // Slightly transparent rungs
+                    
+                    ctx.globalAlpha = alpha;
+                    ctx.beginPath();
+                    ctx.arc(pos.x, pos.y, Math.max(0, p.radius * pos.scale), 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.fill();
+                    ctx.globalAlpha = 1;
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
         }
 
         // Toggle Mobile Menu - Updated logic for animation
